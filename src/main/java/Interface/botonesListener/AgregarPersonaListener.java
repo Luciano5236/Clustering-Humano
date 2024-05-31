@@ -16,13 +16,13 @@ public class AgregarPersonaListener implements ActionListener {
     private MenuIngresarDatos _menuIngresarDatos;
 	private JTextField _textFieldNombre;
     private NexoGrafoVentana _nexoGrafo;
-    private JTable _table;
+    private JTable _tabla;
     private Persona _persona;
     
     public AgregarPersonaListener(JTextField _textFieldNombre, NexoGrafoVentana nexoGrafo, JTable table, MenuIngresarDatos menuIngresarDatos) {
         this._textFieldNombre = _textFieldNombre;
         this._nexoGrafo = nexoGrafo;
-        this._table = table;
+        this._tabla = table;
         this._menuIngresarDatos = menuIngresarDatos;
         this._persona= Persona.crearPersona("", 0, 0, 0, 0);
     }
@@ -46,7 +46,7 @@ public class AgregarPersonaListener implements ActionListener {
                         nuevaPersona.getInteresEspectaculos(),
                         nuevaPersona.getInteresCiencia()
                 };
-                DefaultTableModel model = (DefaultTableModel) _table.getModel();
+                DefaultTableModel model = (DefaultTableModel) _tabla.getModel();
                 model.addRow(rowData);
             } else {
                 JOptionPane.showMessageDialog(null, "Ya ingresaste ese nombre.", "Nombre repetido", JOptionPane.INFORMATION_MESSAGE);
